@@ -1,0 +1,19 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        s2=[]
+        for char in s:
+            if char in "({[":
+                s2.append(char)
+            else:
+                if s2 and char=="}" and s2[-1]=="{":
+                    s2.pop()
+                elif s2 and char=="]" and s2[-1]=="[":
+                    s2.pop()
+                elif s2 and char==")" and s2[-1]=="(":
+                    s2.pop()
+                else:
+                    return False
+        if len(s2)==0:
+            return True
+        else:
+            return False
