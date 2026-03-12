@@ -1,0 +1,17 @@
+a=[10,20,50,40,80,15]
+smallest=float('inf')
+second_smallest=float('inf')
+third_smallest=float('inf')
+for i in range(len(a)):
+    if a[i]<smallest:
+        third_smallest=second_smallest
+        second_smallest=smallest
+        smallest=a[i]
+    elif a[i]<second_smallest and a[i]!=smallest:
+        third_smallest=second_smallest
+        second_smallest=a[i]
+    elif a[i]<third_smallest:
+        third_smallest=a[i]
+print(smallest)
+print(second_smallest)
+print(third_smallest)
