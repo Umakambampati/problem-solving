@@ -1,0 +1,16 @@
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        #approach1:
+        # k=k%len(nums)
+        # for _ in range(k):
+        #     temp=nums[len(nums)-1]
+        #     for i in range(len(nums)-2,-1,-1):
+        #         nums[i+1]=nums[i]
+        #     nums[0]=temp
+        #approach2:
+        k=k%len(nums)
+        nums.reverse()
+        nums[:k]=reversed(nums[:k])
+        nums[k:]=reversed(nums[k:])
+
+        
